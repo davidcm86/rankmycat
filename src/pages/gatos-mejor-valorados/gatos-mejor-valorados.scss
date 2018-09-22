@@ -1,0 +1,50 @@
+page-gatos-mejor-valorados {
+    h1 { font-size:1.2em; text-align:center; }
+    .fondo { background-color:#fff8ed; }
+    // centrar contenido de estrella y votación
+    .vertical-align-content > *
+    {
+        display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
+    }
+    .cell-1{
+        height: 50px;
+    }
+    ul {
+        padding: 0px;
+        &.rating li {
+          padding: 5px 5px !important;
+          background: none;
+          color: #ffb400;
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+      }
+      .rating {
+        height:50px;
+        margin-top:-3px;
+        margin-left:-4px;
+      }
+      .toolbar-title-md {
+        font-size: 1.9rem;
+        padding-top: 5px;
+      }
+      .enlace{
+        font-size: 12pt; 
+        font-weight: bold; 
+        padding: 5px; 
+        background-color: #ffffcc; 
+        color: #666666; 
+        text-decoration: none; 
+      }
+      .enlace-borrar{
+        font-size: 12pt; 
+        font-weight: bold; 
+        padding: 5px; 
+        background-color: #ffa3a3; 
+        color: #666666; 
+        text-decoration: none; 
+      }
+}

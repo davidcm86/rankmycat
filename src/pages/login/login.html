@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar color="gato">
+    <ion-title style="text-align:center;">Entra o Registrate</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="fondo">
+  <h1>¿Qué quieres hacer?</h1>
+  <ion-grid>
+      <ion-row>
+        <ion-col>
+            <button ion-button (click)="verEntrar(entrar)" block>Entrar</button>
+        </ion-col>
+        <ion-col>
+            <button ion-button (click)="verRegistrarme(registrarme)" color="light" block>Registrarme</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div *ngIf="entrar">
+      <ion-item class="fondo">
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item class="fondo">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-col>
+          <button ion-button color="gato" (click)="login(user)" block>Entrar</button>
+      </ion-col>
+    </div>
+
+    <div *ngIf="registrarme">
+      <ion-item class="fondo">
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item class="fondo">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-item class="fondo">
+        <ion-label floating>Pais</ion-label>
+        <ion-select [(ngModel)]="user.pais">
+          <ion-option *ngFor="let option of paises" [value]="option.nombre + '-' + option.id">{{option.nombre}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="fondo">
+        <ion-label>Acepto<b> política de privacidad</b></ion-label>
+        <ion-checkbox [(ngModel)]="user.politica"></ion-checkbox>
+      </ion-item>
+      <ion-item class="fondo">
+        <p align-items-center><a href="#" (click)="politicaPrivacidad()">Enlace política de privacidad</a></p>
+      </ion-item>
+      <ion-col>
+          <button ion-button color="gato" (click)="register(user)" block>Registrarme</button>
+      </ion-col>
+    </div>
+</ion-content>
+

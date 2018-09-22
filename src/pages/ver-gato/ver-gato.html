@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="gato">
+    <ion-title>TOP {{ topGato }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  class="cards-bg social-cards fondo">
+
+  <ion-card>
+    <ion-item>
+      <h1><em><strong>{{ gato.nombreGato }}</strong></em></h1>
+    </ion-item>
+
+    <img src="{{ gato.img }}" style="max-height:300px;">
+
+    <ion-card-content>
+      <ion-chip color="gato" class="espacio-derecha">
+        <ion-icon name="star" color="light"></ion-icon>
+        <ion-label>{{ gato.mediaVotos }}</ion-label>
+      </ion-chip>
+      <ion-chip color="gato" class="espacio-derecha">
+        <ion-avatar>
+          <img src="assets/imgs/icon-raza-gato.png">
+        </ion-avatar>
+        <ion-label>{{ gato.raza }}</ion-label>
+      </ion-chip>
+      <ion-chip color="gato" class="espacio-derecha">
+        <ion-icon name="{{ gato.iconoSexo }}" color="light"></ion-icon>
+      </ion-chip>
+      <ion-grid text-center class="vertical-align-content">
+        <ion-row class="cell-1">
+          <ion-col class="cell-2">
+            <rating 
+            [(ngModel)]="mediaVotos"
+            readOnly="true"
+            max="5"
+            emptyStarIconName="star-outline"
+            halfStarIconName="star-half"
+            starIconName="star"
+            nullable="true">
+            </rating>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            ({{ gato.mediaVotos }} estrellas / {{ gato.votos }} votos)
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<style>
+  .social-cards ion-col {
+    padding: 0;
+  }
+</style>

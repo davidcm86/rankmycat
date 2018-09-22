@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar color="gato">
+    <ion-title>Editar info de mi gato</ion-title>
+  </ion-navbar>
+</ion-header>
+    
+<ion-content padding class="fondo">
+    <ion-buttons>
+      <button ion-button block (click)="editarGato(key,rutaImagen)">¡Editar mi gatito!</button>
+    </ion-buttons>
+    <ion-item class="fondo">
+      <ion-label color="primary">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre" placeholder="escribe el nombre de tu gato"></ion-input>
+    </ion-item>
+    <ion-item class="fondo">
+      <ion-label>Raza</ion-label>
+      <ion-select [(ngModel)]="raza">
+        <ion-option value="angora-turco">Angora Turco</ion-option>
+        <ion-option value="bengala">Bengala</ion-option>
+        <ion-option value="bombay">Bombay</ion-option>
+        <ion-option value="bosque-noruego">Bosque Noruego</ion-option>
+        <ion-option value="british-shorthair">British Shorthair</ion-option>
+        <ion-option value="gato-comun">Gato común</ion-option>
+        <ion-option value="maine-coon">Maine Coon</ion-option>
+        <ion-option value="otro-gato-pelo-corto">Otro gato pelo corto</ion-option>
+        <ion-option value="otro-gato-pelo-largo">Otro gato pelo largo</ion-option>
+        <ion-option value="otro-gato-exotico">Otro gato exótico</ion-option>
+        <ion-option value="persa">Persa</ion-option>
+        <ion-option value="ragdoll">Ragdoll</ion-option>
+        <ion-option value="sphynx">Sphynx</ion-option>
+        <ion-option value="siames">Siames</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="fondo">
+      <ion-label>Sexo</ion-label>
+      <ion-select [(ngModel)]="sexo">
+        <ion-option value="masculino">Masculino</ion-option>
+        <ion-option value="femenino">Femenino</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item class="fondo">
+      <ion-label>Edad</ion-label>
+      <ion-select [(ngModel)]="edad">
+        <ion-option value="0">0</ion-option>
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="13">13</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="15">15</ion-option>
+        <ion-option value="16">16</ion-option>
+        <ion-option value="17">17</ion-option>
+        <ion-option value="18">18</ion-option>
+        <ion-option value="19">19</ion-option>
+        <ion-option value="20">20</ion-option>
+      </ion-select>
+    </ion-item>
+    <div class="warning-msg">
+      ¡Recuerda subir tus fotos en horizontal!
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button block icon-left (click)="seleccionarFoto()"><ion-icon name="photos"></ion-icon>Seleccionar</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button block icon-left (click)="mostrarCamara()"><ion-icon name="camera"></ion-icon>Cámara</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-list>
+      <ion-item *ngIf="img">
+        <img [src]="img">
+      </ion-item>
+    </ion-list>
+    <div style="clear:both"></div>
+  </ion-content>
+  
+

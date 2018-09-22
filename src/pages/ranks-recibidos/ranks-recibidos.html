@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar color="gato">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-2>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>           
+          </ion-col>
+          <ion-col col-7>
+            <ion-title style="text-align:center;">Estrellas Recibidas</ion-title>
+          </ion-col>
+          <ion-col col-3>
+            <ion-icon *ngIf="!userId" style="padding-top: 4px;font-size: 25px;" (click)="irLoginPage()" name="log-in" color="light"></ion-icon>
+            <ion-icon *ngIf="userId" style="padding-top: 4px;font-size: 25px;" (click)="irMenuUsuarioPage()" name="paw" color="light"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding class="fondo">
+  <h1>{{ mensaheH1 }}</h1>
+  <ion-list >
+    <ion-item *ngFor="let gato of gatos; let i = index">
+      <ion-thumbnail item-start>
+        <img *ngIf="gato.img" src="{{ gato.img }}">
+        <img *ngIf="!gato.img" src="/assets/imgs/gato-borrado.svg">
+      </ion-thumbnail>
+      <h2 *ngIf="gato.nombreGato" style="margin-top:7px;">{{ gato.nombreGato }}</h2>
+      <h2 *ngIf="!gato.nombreGato" style="margin-top:7px;">¡Ups!</h2>
+      <p *ngIf="gato.nombreGato" style="height:30px;">
+        <rating 
+          [(ngModel)]="gato.rate"
+          readOnly="false"
+          max="5"
+          emptyStarIconName="star-outline"
+          halfStarIconName="star-half"
+          starIconName="star"
+          nullable="true"
+          (ngModelChange)="salvarPuntuacion($event,gato.key,i)">
+        </rating>
+      </p>
+      <p *ngIf="!gato.nombreGato"><em>Gato borrado por un usuario</em></p>
+      <p *ngIf="gato.nombreGato">
+        ({{ gato.mediaVotos }} estrellas / {{ gato.votos }} votos)
+      </p>
+      <p *ngIf="!gato.nombreGato">
+        <span class="enlace-borrar" (click)="borrarVotacionGatoBorrado(gato.key,i);">Borrar de esta lista</span>
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>

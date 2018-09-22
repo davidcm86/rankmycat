@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="gato">
+    <ion-title center>Gatos Mejor valorados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="fondo">
+  <h1>TOP 10 de los gatos mejor valorados</h1>
+    <ion-list>
+      <ion-item *ngFor="let gato of gatos; let i = index" class="fondo">
+        <ion-thumbnail item-start>
+          <img src="{{ gato.img }}">
+        </ion-thumbnail>
+        <h2 style="margin-top:7px;">
+          {{ gato.nombreGato }} - 
+          <span class="enlace" (click)="modalVerGato(gato.key, i);">Ver</span>
+        </h2>
+        <p style="height:30px;">
+          <rating 
+            [(ngModel)]="gato.mediaVotos"
+            readOnly="true"
+            max="5"
+            emptyStarIconName="star-outline"
+            halfStarIconName="star-half"
+            starIconName="star"
+            nullable="false">
+          </rating>
+        </p>
+        <p>
+          ({{ gato.mediaVotos }} estrellas / {{ gato.votos }} votos)
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-content>

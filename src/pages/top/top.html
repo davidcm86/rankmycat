@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="gato">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2>
+          <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>           
+        </ion-col>
+        <ion-col col-7>
+          <ion-title style="text-align:center;">Top 10 Gatos</ion-title>
+        </ion-col>
+        <ion-col col-3>
+          <ion-icon *ngIf="!userId" style="padding-top: 4px;font-size: 25px;" (click)="hacerPush('LoginPage')" name="log-in" color="light"></ion-icon>
+          <ion-icon *ngIf="userId" style="padding-top: 4px;font-size: 25px;" (click)="hacerPush('MenuUsuarioPage')" name="paw" color="light"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="fondo">
+  <ion-grid>
+    <ion-row>
+      <ion-buttons>
+        <button ion-button block (click)="hacerPush('GatosMasVotadosPage')" >¡Más votados!</button>
+      </ion-buttons>
+      <ion-buttons>
+        <button ion-button block (click)="hacerPush('GatosMejorValoradosPage')" >¡Mejor valorados!</button>
+      </ion-buttons>
+    </ion-row>
+  </ion-grid>
+</ion-content>

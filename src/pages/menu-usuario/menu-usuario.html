@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="gato">
+    <ion-title>Mi Gatos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="fondo">
+  <h1 *ngIf="!gatos">
+    Aquí apareceran todos tus gatos que subas. Si todavía no has subido ninguno pincha en el icono de la cámara.
+  </h1>
+  <ion-list>
+    <ion-item *ngFor="let gato of gatos; let i = index" class="fondo">
+      <ion-thumbnail item-start>
+        <img src="{{ gato.img }}">
+      </ion-thumbnail>
+      <h2 style="margin-top:7px;">
+        {{ gato.nombreGato }} - 
+        <span class="enlace" (click)="modalEditarGato(gato.key);">Editar</span>
+        <span class="enlace-borrar" (click)="modalBorrarGato(gato.key, gato.nombreGato);">Borrar</span>
+      </h2>
+      <p style="height:30px;">
+        <rating 
+          [(ngModel)]="gato.rate"
+          readOnly="true"
+          max="5"
+          emptyStarIconName="star-outline"
+          halfStarIconName="star-half"
+          starIconName="star"
+          nullable="true"
+          (ngModelChange)="salvarPuntuacion($event,gato.key,i)">
+        </rating>
+      </p>
+      <p>
+        ({{ gato.mediaVotos }} estrellas / {{ gato.votos }} votos)
+      </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-fab center middle *ngIf="!gatos">
+  <button ion-fab color="gato" (click)="subirImagen()"><ion-icon name="camera"></ion-icon></button>
+</ion-fab>

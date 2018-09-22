@@ -1,0 +1,105 @@
+$star-rating-outline-color: #cccccc;
+$star-rating-fill-color: #ffb400;
+$star-rating-aside-color: #999999;
+page-ver-gato {
+  .fondo { background-color:#fff8ed; }
+  .toolbar-title-md {
+      font-size: 2.3rem;
+      padding-top: 4px;
+  }
+  ion-icon { // para los iconos de la card
+    font-size: 23px;
+  }
+  .espacio-derecha {
+    margin-right: 3px;
+  }
+}
+
+
+.star-rating {
+  font-size: 40px;
+
+  .star-rating-stars {
+    font-family: "Arial Unicode MS", Arial, sans-serif;
+    unicode-bidi: bidi-override;
+    color: $star-rating-outline-color;
+
+    .star-rating-star {
+      float: left;
+      width: 0.99em;
+
+      &:before {
+        content: "\2605";
+        position: absolute;
+        color: $star-rating-fill-color;
+      }
+    }
+  }
+
+  .star-rating-current-value:before,
+  .star-rating-current-value ~ .star-rating-star:before {
+    content: normal;
+  }
+
+  &.editable:hover .star-rating-current-value:before,
+  &.editable:hover .star-rating-current-value ~ .star-rating-star:before {
+    content: "\2605";
+    position: absolute;
+    color: $star-rating-fill-color;
+  }
+
+  &.editable .star-rating-star:hover,
+  &.editable .star-rating-star:hover ~ .star-rating-star:before {
+    content: normal;
+    cursor: pointer;
+  }
+
+  .star-rating-aside {
+    float: left;
+    margin-left: 5px;
+    color: $star-rating-aside-color;
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  &.small {
+    font-size: 26px;
+    line-height: 1;
+
+    .star-rating-aside {
+      line-height: 10px;
+    }
+  }
+
+  &.large {
+    font-size: 20px;
+
+    .star-rating-aside {
+      line-height: 16px;
+    }
+  }
+}
+// estilos de estrellas
+ul {
+  padding: 0px;
+ 
+  &.rating li {
+    padding: 5px 5px !important;
+    background: none;
+    color: #ffb400;
+ 
+    ion-icon {
+      font-size: 40px;
+    }
+  }
+}
+// centrar contenido de estrella y votación
+.vertical-align-content > *
+{
+     display: flex!important;
+     align-content: center!important;
+     align-items: center!important;
+}
+.cell-1{
+  height: 40px;
+}

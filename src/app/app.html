@@ -1,7 +1,45 @@
-<ion-menu [content]="content">
+<ion-menu id="no-login" [content]="content">
+  <ion-header>
+      <ion-toolbar>
+        <ion-title>
+            <ion-row>
+              <ion-col style="margin-top:10px;">
+                  Menú
+              </ion-col>
+              <ion-col>
+                <button ion-button style="float:right;" menuClose="left" color="gato" clear>
+                  <ion-icon name="close-circle" style="zoom:1.5;"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>  
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pagesNoLogin" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu id="login" [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>
+          <ion-row>
+            <ion-col style="margin-top:10px;">
+                Menú
+            </ion-col>
+            <ion-col>
+              <button ion-button style="float:right;" menuClose="left" color="gato" clear>
+                <ion-icon name="close-circle" style="zoom:1.5;"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>  
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -12,7 +50,6 @@
       </button>
     </ion-list>
   </ion-content>
-
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
