@@ -1,4 +1,4 @@
-# rankmycat
+# RANK MY CAT EN ANDROID STORE DISPONIBLE
 La APP permite subir a tu gato y que la gente registrada y la no registrada pueda votar con estrellas a los gatos. Hay un ranking de gatos.
 Como usuario puedes editar y borrar tus gatos y adems hay un apartado de estrellas recibidas por otros usuarios. Lo cual genera una retroalimentación.
 # NOTA IMPORTANTE SI QUIERES AYUDAR.
