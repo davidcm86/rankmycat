@@ -47,23 +47,14 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { VotacionesGatoProvider } from '../providers/votaciones-gato/votaciones-gato';
 //import * as firebase from 'firebase';
-// firebase realtime
-/*export const firebaseConfig = { // info sacada de firebase "agregar firebase a nuestra web"
-  apiKey: "AIzaSyBljajA449wcygESghCF8-Tje4gMnJIFoc",
-  authDomain: "rank-my-cat-890dc.firebaseapp.com",
-  databaseURL: "https://rank-my-cat-890dc.firebaseio.com",
-  projectId: "rank-my-cat-890dc",
-  storageBucket: "rank-my-cat-890dc.appspot.com",
-  messagingSenderId: "425539845960"
-};*/
 // firebase cloud
 export const firebaseConfig = { // info sacada de firebase "agregar firebase a nuestra web"
-apiKey: "AIzaSyA4Sd7H8mcQbi-C0Y2RJykd6Y2a-J7Ez40",
-    authDomain: "rank-my-cat-cloud.firebaseapp.com",
-    databaseURL: "https://rank-my-cat-cloud.firebaseio.com",
-    projectId: "rank-my-cat-cloud",
-    storageBucket: "rank-my-cat-cloud.appspot.com",
-    messagingSenderId: "651056733060"
+apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "d",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 
 @NgModule({
